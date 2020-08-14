@@ -12,12 +12,13 @@ class ViewController: UIViewController {
     @IBOutlet var backButton: UIButton!
     @IBOutlet var nextButton: UIButton!
     @IBOutlet var tapButton: UIButton!
+    @IBOutlet var startStopButton: UIButton!
     
     var imageIndex:Int = 0
     // タイマー
     var timer: Timer!
 
-    let images = [UIImage(named: "1"),UIImage(named:"2"),UIImage(named: "3")]
+    let images = [UIImage(named:"1"),UIImage(named:"2"),UIImage(named:"3")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,19 +47,20 @@ class ViewController: UIViewController {
           SlideShow.image = images[imageIndex]
       }
     // 再生/停止ボタン
-    @IBAction func startStop(_ sender: Any) {
+    @IBAction func startStopButton(_ sender: Any) {
         if(timer == nil){
               //　開始時の処理
             timer = Timer.scheduledTimer(timeInterval:  2.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
+            startStopButton.setTitle("停止", for: .normal)
             nextButton.isEnabled = false
             backButton.isEnabled = false
-
         }else{
               // 停止時の処理
             timer.invalidate()
             timer = nil
             nextButton.isEnabled = true
             backButton.isEnabled = true
+            startStopButton.setTitle("再生", for: .normal)
         }
     }
         @objc func changeImage(){
@@ -71,13 +73,14 @@ class ViewController: UIViewController {
     
     @IBAction func tapButton(_ sender: UIButton) {
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let tapButtonViewController:ResultViewController = segue.destination as! ResultViewController
         
         tapButtonViewController.image = self.images[imageIndex]
-    //    print("値は \(self.SlideShow)")
+        timer.invalidate()
     }
+    
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
     }
     

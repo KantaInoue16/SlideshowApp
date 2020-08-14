@@ -23,10 +23,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAk-el-1tu">
-                                <rect key="frame" x="233" y="500" width="66" height="30"/>
-                                <state key="normal" title="再生/停止"/>
+                                <rect key="frame" x="233" y="500" width="31" height="30"/>
+                                <state key="normal" title="再生"/>
                                 <connections>
-                                    <action selector="startStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MEK-uC-ZWV"/>
+                                    <action selector="startStopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s9K-Gd-tEH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCS-NV-rNv">
@@ -75,6 +75,7 @@
                         <outlet property="SlideShow" destination="WgQ-mO-d3k" id="tz9-sY-chw"/>
                         <outlet property="backButton" destination="gCS-NV-rNv" id="J8H-y9-6Rj"/>
                         <outlet property="nextButton" destination="wMX-Jr-OZE" id="Tdu-li-mit"/>
+                        <outlet property="startStopButton" destination="JAk-el-1tu" id="qiH-ov-Skf"/>
                         <outlet property="tapButton" destination="m7V-K5-p8X" id="gAe-4N-CzK"/>
                     </connections>
                 </viewController>
@@ -119,7 +120,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ih-YL-3Cg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="vHq-C5-1jN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="981.60000000000002" y="129.98500749625188"/>
+            <point key="canvasLocation" x="854" y="128"/>
         </scene>
     </scenes>
 </document>
