@@ -78,9 +78,14 @@ class ViewController: UIViewController {
         let tapButtonViewController:ResultViewController = segue.destination as! ResultViewController
         
         tapButtonViewController.image = self.images[imageIndex]
-        timer.invalidate()
+        if(timer != nil){
+                   timer.invalidate()
+                   timer = nil
+                   nextButton.isEnabled = true
+                   backButton.isEnabled = true
+                   startStopButton.setTitle("再生", for: .normal)
+               }
     }
-    
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
     }
     
